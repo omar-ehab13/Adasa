@@ -1,0 +1,14 @@
+.btn-footer {
+    width: 3.7rem; 
+    height: 3.7rem;
+    background-color: var(--color-primary);
+    padding-bottom: 0.2rem;
+    border-radius: 5px;
+    box-shadow: rgba(249, 115, 22, 0.3) 0px 4px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-footer:hover {
+    padding: 0.7rem !important;
+}

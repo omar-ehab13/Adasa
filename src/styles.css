@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tajawal Font Faces */
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/tajawal/Tajawal-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/tajawal/Tajawal-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/tajawal/Tajawal-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/tajawal/Tajawal-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/tajawal/Tajawal-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/tajawal/Tajawal-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/tajawal/Tajawal-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+    --color-primary: #f97316;
+    --color-primary-light: #fb923c;
+    --color-primary-dark: #ea580c;
+    --color-accent: #fbbf24;
+    --color-dark: #0a0a0a;
+    --color-dark-secondary: #111;
+    --color-dark-tertiary: #1a1a1a;
+    --color-dark-bg: #0a0a0af2;
+    --color-dark-card: #161616;
+    --color-border: #262626;
+    --color-border-light: #333;
+    --color-neutral: oklch(70.8% 0 0);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+
+/* Text Classes */
+.text-neutral {
+    color: var(--color-neutral) !important;
+}
+.text-orange {
+    color: var(--color-primary);
+}
+
+/* Background Classes */
+.bg-dark {
+    background-color: var(--color-dark-bg);
+}
+
+.bg-orange {
+    background-color: var(--color-primary);
+}
+
+
+/* Button Classes */
+.btn-hover:hover {
+    position: relative;
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+.btn-hover {
+    cursor: pointer;
+}
+

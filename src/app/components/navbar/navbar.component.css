@@ -1,0 +1,47 @@
+.nav-logo {
+    width: 4.2rem !important;
+    height: 4.2rem !important;
+}
+
+.rounded-border {
+    border: solid 1px var(--color-border-light);
+    padding: 0.95rem 0.125rem !important;
+    /* border-radius: 2px; */
+}
+
+.active-link {
+    background-color: var(--color-primary);
+    border-radius: 50rem;
+    color: white !important;
+    padding: 0.70rem 1.5rem !important;
+    position: relative;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hover-effect {
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    color: white !important;
+}
+
+.search-icon {
+    padding: 20px;
+}
+
+.search-icon:hover {
+    border: 1px solid var(--color-border-light);
+    border-radius: 1rem;
+}
+
+.search-icon,
+.search-icon i {
+    transition: all 0.3s ease;
+}
+
+.search-icon:hover i {
+    color: var(--color-primary) !important;
+}
+

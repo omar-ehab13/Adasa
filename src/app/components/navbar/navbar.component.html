@@ -1,0 +1,33 @@
+<nav class="bg-dark border-b border-color-border">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-around align-items-center py-3">
+            <!-- Logo Section -->
+            <a href="#" class="d-flex align-items-center text-decoration-none text-neutral">
+                <div class="nav-logo">
+                    <img src="/images/logo.png" alt="logo" title="adasa-logo" class="img-fluid">
+                </div>
+                <div class="d-flex flex-column me-3">
+                    <span class="fw-bold fs-4">عدسة</span>
+                    <span class="text-orange fs-6">عالم التصوير الفوتوغرافي</span>
+                </div>
+            </a>
+
+            <!-- Center Navigation Menu -->
+            <div class="d-none d-md-flex align-items-center rounded-border rounded-pill">
+                <a class="text-neutral nav-link fs-5 mx-4 hover-effect" routerLinkActive="active-link" routerLink="" [routerLinkActiveOptions]="{exact: true}">الرئيسية</a>
+                <a class="text-neutral nav-link fs-5 mx-4 hover-effect" routerLinkActive="active-link" routerLink="blog">المدونة</a>
+                <a class="text-neutral nav-link fs-5 mx-4 hover-effect" routerLinkActive="active-link" routerLink="about">من نحن</a>
+            </div>
+
+            <!-- Search Section -->
+            <div class="d-flex align-items-center">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass fa-xl text-neutral"></i>
+                </div>
+                <div class="bg-orange rounded-pill px-4 py-3 me-3 btn-hover">
+                    <a class="text-white fs-5 text-decoration-none fw-bold" href="#">إبدأ القراءة</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
