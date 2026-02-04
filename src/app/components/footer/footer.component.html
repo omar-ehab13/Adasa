@@ -1,25 +1,172 @@
-<div class="container-fluid bg-dark">
-    <div class="d-md-flex justify-content-around py-5 text-white">
-        <!-- FIRST COLUMN-->
-        <div class="d-flex flex-column w-25">
-            <!-- First Row In First Column-->
-            <div class="d-flex align-items-center mb-4">
-                <div
-                    class="d-flex justify-content-center align-items-end btn-footer">
-                    <span class="fw-bold fs-4 text-white">ع</span>
+<!-- footer.component.html -->
+<footer class="container-fluid bg-dark py-5">
+    <div class="container">
+        <div class="row text-white g-4 g-lg-5">
+
+            <!-- FIRST COLUMN -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <!-- Logo Section -->
+                <div class="d-flex align-items-center mb-4">
+                    <div
+                        class="btn-footer d-flex justify-content-center align-items-center me-3">
+                        <span class="fw-bold fs-4 text-white">ع</span>
+                    </div>
+                    <h1 class="fw-bold fs-4 mb-0 text-orange">عدسة</h1>
                 </div>
-                <span class="ms-3 fw-bold fs-4">عدسة</span>
-            </div>
-            <!-- Second Row In First Column-->
-            <div>
-                <p class="text-neutral">
+
+                <!-- Description -->
+                <p class="text-neutral lh-lg mb-4">
                     مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار
                     المحترفين ونصائح عملية لتطوير مهاراتكم.
                 </p>
+
+                <!-- Social Icons Placeholder -->
+                <div class="d-flex gap-3 footer-icons">
+                    <!-- Twitter/X -->
+                    <a href="#"
+                        class="social-icon d-flex justify-content-center align-items-center">
+                        <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                    </a>
+
+                    <!-- Github -->
+                    <a href="#"
+                        class="social-icon d-flex justify-content-center align-items-center">
+                        <i class="fa-brands fa-github fa-2xl"></i>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#"
+                        class="social-icon d-flex justify-content-center align-items-center">
+                        <i class="fab fa-youtube fa-2xl"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#"
+                        class="social-icon d-flex justify-content-center align-items-center">
+                        <i class="fa-brands fa-linkedin fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECOND COLUMN - استكشف -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h4 class="fw-bold fs-5 mb-4 text-orange">استكشف</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <a routerLink="home"
+                            class="text-neutral text-decoration-none d-flex align-items-center hover-link">
+                            <i
+                                class="fa-solid fa-angle-left text-orange pe-4 d-none"></i>
+                            <span>الرئيسية</span>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a routerLink="blog"
+                            class="text-neutral text-decoration-none d-flex align-items-center hover-link">
+                            <i
+                                class="fa-solid fa-angle-left text-orange pe-4 d-none"></i>
+                            <span>المدونة</span>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a routerLink="about"
+                            class="text-neutral text-decoration-none d-flex align-items-center hover-link">
+                            <i
+                                class="fa-solid fa-angle-left text-orange pe-4 d-none"></i>
+                            <span> من نحن</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- THIRD COLUMN - التصنيفات -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h4 class="fw-bold fs-5 mb-4 text-orange">التصنيفات</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <a href="#"
+                            class="text-neutral text-decoration-none d-flex align-items-center hover-link">
+                            <i
+                                class="fa-solid fa-angle-left text-orange pe-4 d-none"></i>
+                            <span>إضاءة</span>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="#"
+                            class="text-neutral text-decoration-none d-flex align-items-center hover-link">
+                            <i
+                                class="fa-solid fa-angle-left text-orange pe-4 d-none"></i>
+                            <span>بورتريه</span>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="#"
+                            class="text-neutral text-decoration-none d-flex align-items-center hover-link">
+                            <i
+                                class="fa-solid fa-angle-left text-orange pe-4 d-none"></i>
+                            <span>مناظر طبيعية</span>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="#"
+                            class="text-neutral text-decoration-none d-flex align-items-center hover-link">
+                            <i
+                                class="fa-solid fa-angle-left text-orange pe-4 d-none"></i>
+                            <span>تقنيات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- FOURTH COLUMN - ابق على اطلاع -->
+            <div class="col-lg-3 col-md-6">
+                <h4 class="fw-bold fs-5 mb-4 text-orange">ابقى على اطلاع</h4>
+                <p class="text-neutral mb-4">
+                    اشترك للحصول على أحدث الملفات والتحديثات.
+                </p>
+
+                <!-- Email Subscription Form -->
+                <div class="mb-4">
+                    <div class="input-group d-flex flex-column row-gap-3">
+                        <input
+                            type="email"
+                            class="form-control px-4 py-3"
+                            placeholder="أدخل بريدك الإلكتروني"
+                            aria-label="البريد الإلكتروني">
+                        <button
+                            class="btn bg-orange text-white px-4 fw-bold btn-hover"
+                            type="button">
+                            اشترك
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="d-flex flex-column w-25">استكشف</div>
-        <div class="d-flex flex-column w-25">التصنيفات</div>
-        <div class="d-flex flex-column w-25">ابق علي اطلاع</div>
+
+        <!-- Divider -->
+        <hr class="border-color-border my-5">
+
+        <!-- Copyright Section -->
+        <div class="row">
+            <div class="col-12">
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-center text-neutral">
+                    <div class="mb-3 mb-md-0 text-center text-md-start">
+                        © 2026 عدسة الحقوق محفوظة.
+                    </div>
+                    <div class="d-flex gap-4">
+                        <a href="#"
+                            class="text-neutral text-decoration-none hover-link">سياسة
+                            الخصوصية</a>
+                        <a href="#"
+                            class="text-neutral text-decoration-none hover-link">شروط
+                            الاستخدام</a>
+                        <a href="#"
+                            class="text-neutral text-decoration-none hover-link">اتصل
+                            بنا</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</footer>

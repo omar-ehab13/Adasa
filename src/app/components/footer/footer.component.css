@@ -1,14 +1,115 @@
+/* Main Footer Styles */
+footer {
+    background-color: var(--color-dark) !important;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Footer Icon Style */
 .btn-footer {
-    width: 3.7rem; 
+    width: 3.7rem;
     height: 3.7rem;
     background-color: var(--color-primary);
     padding-bottom: 0.2rem;
-    border-radius: 5px;
-    box-shadow: rgba(249, 115, 22, 0.3) 0px 4px 20px;
+    border-radius: 0.75rem;
+    box-shadow: rgba(249, 115, 22, 0.3) 96px 71px -1px;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .btn-footer:hover {
-    padding: 0.7rem !important;
+    box-shadow: rgba(249, 115, 22, 0.3) 1px 1px 2px;
+    position: relative;
+    top: 0;
+    width: 3.75rem;
+    height: 3.75rem;
+}
+
+.btn-footer:hover span {
+    font-weight: bold !important;
+    font-size: 1.7rem !important;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: var(--color-neutral);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-icon:hover {
+    color: white;
+    background-color: var(--color-primary);
+    box-shadow: rgba(249, 115, 22, 0.3) 1px 1px 2px;;
+    transform: scale(1.1); 
+}
+
+/* Hover Link Style */
+.hover-link {
+    transition: all 0.3s ease;
+    padding: 0.25rem 0;
+    font-size: 1.125rem !important;
+}
+
+.hover-link .fa-angle-left {
+    transition: all 0.3s ease;
+}
+
+.hover-link:hover {
+    color: var(--color-primary) !important;
+    transform: translateX(-5px);
+    font-weight: bold;
+}
+
+.hover-link:hover .fa-angle-left {
+    display: inline-block !important;
+}
+
+/* Buttons */
+.btn-hover {
+    border-radius: 0.75rem !important;
+    min-height: 48px !important;
+    font-weight: bold !important;
+    font-size: 1.2rem;
+}
+
+/* Form Controls Styles */
+.form-control {
+    min-height: 48px !important;
+    width: 100%;
+    background-color: var(--color-dark-card) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 0.75rem !important;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(249, 115, 22, 0.25);
+    background-color: var(--color-dark-card);
+}
+
+.form-control::placeholder {
+    text-align: right;
+    color: var(--color-neutral) !important;
+    opacity: 1;
+}
+
+/* Divider */
+.border-color-border {
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    border: none !important;
+    height: 2px !important;
+    background-color: var(--color-border-light) !important;
 }

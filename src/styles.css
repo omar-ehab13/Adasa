@@ -91,11 +91,11 @@ body {
 
 /* Background Classes */
 .bg-dark {
-    background-color: var(--color-dark-bg);
+    background-color: var(--color-dark-bg) !important;
 }
 
 .bg-orange {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary) !important;
 }
 
 
@@ -108,5 +108,10 @@ body {
 
 .btn-hover {
     cursor: pointer;
+}
+
+/* Borders */
+.border-color-border {
+  border-color: var(--color-border) !important;
 }
 
