@@ -1,0 +1,94 @@
+.blog-hero {
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,.3), #000);
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    padding: 5rem 2rem;
+
+    .category {
+      background: #ff7a00;
+      padding: .4rem 1rem;
+      border-radius: 20px;
+      font-size: .9rem;
+    }
+
+    h1 {
+      margin: 1.5rem 0;
+      font-size: 2.5rem;
+      line-height: 1.4;
+    }
+
+    .meta {
+      opacity: .8;
+      margin-bottom: 1.5rem;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-size: .85rem;
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.blog-body {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 2rem;
+  color: #eee;
+
+  .toc {
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 12px;
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: .5rem;
+      font-size: .9rem;
+      opacity: .8;
+    }
+  }
+
+  .content {
+    .excerpt {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: .9;
+    }
+
+    .markdown {
+      white-space: pre-wrap;
+      line-height: 1.9;
+    }
+  }
+}

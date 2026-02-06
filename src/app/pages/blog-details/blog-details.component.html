@@ -1,0 +1,41 @@
+<section class="blog-hero" [style.backgroundImage]="'url(' + post?.image + ')'">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <span class="category">{{ post?.category }}</span>
+    <h1>{{ post?.title }}</h1>
+
+    <div class="meta">
+      <span>{{ post?.date }}</span>
+      <span>•</span>
+      <span>{{ post?.readTime }}</span>
+    </div>
+
+    <div class="author">
+      <img [src]="post?.author!.avatar" alt="author">
+      <div>
+        <strong>{{ post?.author!.name }}</strong>
+        <span>{{ post?.author!.role }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-body">
+  <aside class="toc">
+    <h4>محتويات المقال</h4>
+    <ul>
+        @for (tag of post?.tags; track $index) {
+            <li>{{ tag }}</li>
+        }
+    </ul>
+  </aside>
+
+  <article class="content">
+    <p class="excerpt">{{ post?.excerpt }}</p>
+
+    <div class="markdown">
+      <pre>{{ post?.content }}</pre>
+    </div>
+  </article>
+</section>

@@ -1,1 +1,82 @@
-<p>card works!</p>
+@if(viewMode == 'grid') {
+    <a 
+        class="card-view d-block text-decoration-none" 
+        [routerLink]="['/blog', post.id]"
+    >
+        <div class="card-img">
+            <img [src]="post.image" [alt]="post.title">
+            <span class="category-badge">{{post.category}}</span>
+        </div>
+        <div class="card-content">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fa-regular fa-clock"></i>
+                <span class="mx-2">{{post.readTime}}</span>
+                <span class="mx-3 fw-bold fs-5">•</span>
+                <span>{{post.date}}</span>
+            </div>
+    
+            <h3 class="card-title text-white">{{post.title}}</h3>
+            <p class="mt-2 mb-4 lh-base">{{post.excerpt}}</p>
+    
+            <hr class="seprator"/>
+        </div>
+        
+    
+        <div class="card-footer">
+            <div class="author-info d-flex align-items-center">
+                <div class="author-avatar">
+                    <img [src]="post.author.avatar" [alt]="post.author.name" class="w-100 rounded-circle">
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="author-name">{{post.author.name}}</span>
+                    <span class="author-role">{{post.author.role}}</span>
+                </div>
+                <div class="footer-arrow rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+            </div>
+        </div>
+    </a>
+} @else {
+    <a 
+        class="list-view d-block text-decoration-none" 
+        [routerLink]="['/blog', post.id]"
+    >
+    <div class="d-flex align-items-stretch">
+        <div class="card-img w-25">
+            <img [src]="post.image" [alt]="post.title">
+        </div>
+        
+        <div class="card-content w-75">
+            <div class="d-flex align-items-center mb-2">
+                <span class="category-badge-list me-3">{{post.category}}</span>
+                <i class="fa-regular fa-clock"></i>
+                <span class="mx-2">{{post.readTime}}</span>
+                <span class="mx-3 fw-bold fs-5">•</span>
+                <span>{{post.date}}</span>
+            </div>
+    
+            <h3 class="card-title text-white">{{post.title}}</h3>
+            <p class="mt-2 mb-4 lh-base">{{post.excerpt}}</p>
+
+            <div class="card-footer">
+                <div class="author-info d-flex align-items-center">
+                    <div class="author-avatar">
+                        <img [src]="post.author.avatar" [alt]="post.author.name" class="w-100 rounded-circle">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <span class="author-name">{{post.author.name}}</span>
+                        <span class="author-role">{{post.author.role}}</span>
+                    </div>
+                    <div class="footer-arrow rounded-circle d-flex align-items-center justify-content-center">
+                        <span class="text-orange fw-bold">اقرأ المقال</span>
+                        <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+    </div>
+    </a>
+}

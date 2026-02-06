@@ -1,0 +1,99 @@
+.sticky-top {
+    border-bottom: 1px solid var(--color-border-light);
+    padding: 5px 0;
+}
+
+.search-box {
+    width: 25%;
+    position: relative;
+}
+
+.search-box input {
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 5px 20px 5px 5px;
+    width: 100%;
+    min-height: 3rem;
+    background-color: var(--color-dark-tertiary);
+    color: white;
+}
+
+.search-box input:focus {
+    border: 1px solid var(--color-primary-light) !important;
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+.btn-cat {
+    color: white;
+    padding: 8px 20px !important;
+    border-radius: 0.75rem;
+}
+
+.active {
+    background-color: var(--color-primary) !important;
+    border: 0 !important;
+    color: white !important;
+}
+
+.posts-header {
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.posts-header p {
+    margin: 0;
+}
+
+.view-mode {
+    border: 1px solid var(--color-border) !important;
+    border-radius: 0.75rem;
+    color: var(--color-neutral);
+}
+
+.view-mode-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background-color: var(--color-dark-tertiary);
+    border-radius: 0.9rem;
+    padding: 4px;
+    border: 1px solid var(--color-border-light);
+}
+
+.btn-view-mode {
+    background: none;
+    color: var(--color-neutral);
+    padding: 8px 15px;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid transparent; 
+}
+
+.btn-view-mode:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.btn-view-mode.active {
+    border: 1px solid var(--color-border-light) !important;
+    box-shadow: 0 2px 8px rgba(var(--color-primary, 0, 123, 255), 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-view-mode:not(.active) {
+    transition: all 0.3s ease-in-out;
+}

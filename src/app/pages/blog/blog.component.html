@@ -1,1 +1,68 @@
-<p>blog works!</p>
+<!-- Top Bar -->
+ <div class="sticky-top pb-4">
+     <div class="container blog-toolbar d-flex align-content-center justify-content-between">
+         <!-- Search Box -->
+         <div class="search-box">
+             <input 
+                 type="text" 
+                 placeholder="ابحث في المقالات..."
+                 (input)="applyFilters()"
+                 #searchInput
+             />
+             <i class="fa-solid fa-magnifying-glass"></i>
+         </div>
+         <!-- Categories Buttons -->
+          <div class="categories">
+             @for (cat of categories; track $index) {
+                 <button 
+                     class="btn btn-cat mx-1" 
+                     [class.active]="selectedCategory === cat" 
+                     (click)="selectedCategory = cat; applyFilters()"
+                 >
+                     {{cat == 'all' ? 'جميع المقالات' : cat}}
+                 </button>
+             }
+          </div>
+     </div>
+ </div>
+
+<div class="container mt-5">
+    <!-- Posts -->
+     <div class="mt-4">
+        <div class="posts-header">
+            <div>
+                <p class="text-neutral">عرض <span class="text-white">{{filteredPosts.length}}</span> مقالات</p>
+            </div>
+            <div class="view-mode-container">
+                <button 
+                    class="btn btn-view-mode"
+                    [class.active]="viewMode === 'grid'"
+                    (click)="viewMode = 'grid'"
+                    title="عرض شبكة"
+                >
+                    <i class="fa-solid fa-border-all fa-lg"></i>
+                </button>
+                <button 
+                    class="btn btn-view-mode"
+                    [class.active]="viewMode === 'list'"
+                    (click)="viewMode = 'list'"
+                    title="عرض قائمة"
+                >
+                    <i class="fa-solid fa-bars fa-lg"></i>
+                </button>
+            </div>
+
+        </div>
+         <div class="row g-3 mt-2">
+             @for (post of filteredPosts; track post.id) {
+              <div [class]="viewMode === 'grid' ? 'col-md-4' : 'col-md-12'">
+                 <app-card [post]="post" [viewMode]="viewMode"></app-card>
+             </div>
+             } @empty {
+                 <div class="col-md-12 text-center">
+                     <p>لا توجد مقالات تطابق معايير البحث.</p>
+                 </div>
+             }
+         </div>
+     </div>
+</div>
