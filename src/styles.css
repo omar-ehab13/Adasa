@@ -69,6 +69,8 @@
     --color-border: #262626;
     --color-border-light: #333;
     --color-neutral: oklch(70.8% 0 0);
+
+    --navbar-height: 6vh;
 }
 
 *, ::after, ::before {
@@ -88,6 +90,21 @@ body {
 }
 .text-orange {
     color: var(--color-primary);
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: calc(1.75/1.25);
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: calc(1.25/.875);
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: calc(1/.75);
 }
 
 /* Background Classes */

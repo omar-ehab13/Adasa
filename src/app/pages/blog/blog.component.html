@@ -55,7 +55,7 @@
         </div>
          <div class="row g-3 mt-2">
              @for (post of filteredPosts; track post.id) {
-              <div [class]="viewMode === 'grid' ? 'col-md-4' : 'col-md-12'">
+              <div [class]="viewMode === 'grid' ? 'col-md-6 col-lg-4' : 'col-md-12'">
                  <app-card [post]="post" [viewMode]="viewMode"></app-card>
              </div>
              } @empty {

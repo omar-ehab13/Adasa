@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
@@ -8,5 +8,14 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  isScrolled: boolean = false;
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    this.isScrolled = window.scrollY > 80;
+  }
+
+  ngAfterViewInit() {
+    this.isScrolled = window.scrollY > 80;
+  }
 }

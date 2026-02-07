@@ -1,7 +1,7 @@
 @if(viewMode == 'grid') {
     <a 
         class="card-view d-block text-decoration-none" 
-        [routerLink]="['/blog', post.id]"
+        [routerLink]="['/blog', post.slug]"
     >
         <div class="card-img">
             <img [src]="post.image" [alt]="post.title">

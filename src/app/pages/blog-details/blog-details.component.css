@@ -1,94 +1,149 @@
+/* ======================== */
+/* =====HERO SECTION======= */
+/* ======================== */
 .blog-hero {
   position: relative;
-  height: 70vh;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,.3), #000);
-  }
-
-  .hero-content {
-    position: relative;
-    max-width: 900px;
-    padding: 5rem 2rem;
-
-    .category {
-      background: #ff7a00;
-      padding: .4rem 1rem;
-      border-radius: 20px;
-      font-size: .9rem;
-    }
-
-    h1 {
-      margin: 1.5rem 0;
-      font-size: 2.5rem;
-      line-height: 1.4;
-    }
-
-    .meta {
-      opacity: .8;
-      margin-bottom: 1.5rem;
-    }
-
-    .author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-
-      img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      span {
-        font-size: .85rem;
-        opacity: .8;
-      }
-    }
-  }
+  height: 60vh;
+  min-height: 500px;
+  overflow: hidden;
+  background: linear-gradient(to top,
+      #0a0a0a 0%,
+      rgba(10, 10, 10, 0.5) 50%,
+      transparent 100%);
 }
 
-.blog-body {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: auto;
-  padding: 4rem 2rem;
-  color: #eee;
+.blog-hero .hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
+  z-index: 0;
+}
 
-  .toc {
-    background: #111;
-    padding: 1.5rem;
-    border-radius: 12px;
+/* The overlay */
+.to-top-hero-overlay,
+.to-right-hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
 
-    h4 {
-      margin-bottom: 1rem;
-    }
+.to-top-hero-overlay {
+  background: linear-gradient(to top,
+      #0a0a0a 0%,
+      rgba(10, 10, 10, 0.5) 50%,
+      transparent 100%);
+}
 
-    li {
-      margin-bottom: .5rem;
-      font-size: .9rem;
-      opacity: .8;
-    }
-  }
+.to-right-hero-overlay {
+  background: linear-gradient(to right,
+      oklab(14.4788% 7.45058e-9 7.45058e-9/.3) 0%,
+      transparent 30%);
+}
 
-  .content {
-    .excerpt {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      opacity: .9;
-    }
+.hero-content {
+  position: absolute;
+  padding: 3rem;
+  top: 0;
+  inset-inline: 0;
+  z-index: 10;
+}
 
-    .markdown {
-      white-space: pre-wrap;
-      line-height: 1.9;
-    }
-  }
+.author-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border-light);
+  border-radius: 1rem !important;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--color-primary-light)
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ================================================== */
+/* ===== 2- Blog Content Section ==================== */
+/* ================================================== */
+.blog-content {
+  margin: 0 auto;
+  padding-inline: 2rem;
+  padding-block: 3rem;
+  max-width: 80rem;
+}
+
+.excerpt-box {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(to right,
+      rgba(255, 140, 0, 0.12),
+      rgba(255, 193, 7, 0.05));
+  border: 1px solid rgba(255, 140, 0, 0.25);
+}
+
+.article-content p {
+  color: #cfcfcf;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.article-content h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  scroll-margin-top: 6rem;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.75rem;
+  background: rgba(255, 140, 0, 0.1);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff8c00;
+}
+
+
+
+.sidebar-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #111;
+  border: 1px solid #262626;
+}
+
+.toc a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.toc a:hover {
+  background: rgba(255, 140, 0, 0.08);
+  color: #ff8c00;
 }

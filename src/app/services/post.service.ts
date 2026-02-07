@@ -540,4 +540,8 @@ export class PostService {
 
     return shuffled.slice(0, safeCount);
   }
+
+  getPostBySlug(slug: string) : IPost | undefined {
+    return this.posts.find(p => p.slug.toLowerCase() === slug.toLowerCase());
+  }
 }

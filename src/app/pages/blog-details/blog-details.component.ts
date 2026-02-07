@@ -18,7 +18,7 @@ export class BlogDetailsComponent implements OnInit {
   }
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
-    this.post = this.postService.findPost(Number(slug));
+    this.post = this.postService.getPostBySlug(slug!);
     console.log(this.post);
     if (this.post)
       this.suggestPosts = this.postService.getRandomPosts(3, [this.post!.id]);

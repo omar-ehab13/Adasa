@@ -1,41 +1,105 @@
-<section class="blog-hero" [style.backgroundImage]="'url(' + post?.image + ')'">
-  <div class="overlay"></div>
+<article class="bg-black min-vh-100">
+  <section class="blog-hero">
+    <img [src]="post?.image" alt="hero image" [title]="post?.slug"
+      class="hero-img">
 
-  <div class="hero-content">
-    <span class="category">{{ post?.category }}</span>
-    <h1>{{ post?.title }}</h1>
+    <div class="to-top-hero-overlay"></div>
+    <div class="to-right-hero-overlay"></div>
 
-    <div class="meta">
-      <span>{{ post?.date }}</span>
-      <span>•</span>
-      <span>{{ post?.readTime }}</span>
+    <div class="hero-content">
+      <div class="mx-auto" style="max-width: 64rem;">
+        <div
+          class="d-flex align-items-center flex-wrap gap-3 mb-4 text-white text-sm">
+          <span
+            class="rounded-pill px-3 py-2 bg-orange">{{post?.category}}</span>
+          <div class="d-flex align-items-center gap-4">
+            <span class="d-flex align-items-center gap-2">
+              <i class="fa-regular fa-calendar pe-3"></i>
+              {{post?.date}}
+            </span>
+            <span class="d-flex align-items-center gap-2">
+              <i class="fa-regular fa-clock pe-3"></i>
+              {{post?.readTime}}
+            </span>
+          </div>
+        </div>
+
+        <h1 class="text-white fw-bold mb-5"
+          style="font-size: 3.75rem !important;">أسرار تصوير البورتريه: كيف
+          تلتقط روح الشخصية</h1>
+
+        <div class="d-inline-flex align-items-center gap-2 p-3 author-box">
+          <div class="avatar">
+            <img
+              [src]="post?.author?.avatar"
+              alt="avatar image"
+              [title]="post?.author?.name" />
+          </div>
+          <div class="d-flex flex-column gap-2 align-items-center">
+            <span
+              class="fw-bold fs-6 text-center text-white">{{post?.author?.name}}</span>
+            <span
+              class="text-xs text-nowrap text-white">{{post?.author?.role}}</span>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="author">
-      <img [src]="post?.author!.avatar" alt="author">
-      <div>
-        <strong>{{ post?.author!.name }}</strong>
-        <span>{{ post?.author!.role }}</span>
+  <section class="blog-content">
+    <div class="container py-5">
+      <div class="row g-5">
+
+        <!-- Main Content -->
+        <div class="col-lg-8 order-2 order-lg-1">
+          <!-- content here -->
+          <div class="excerpt-box mb-5">
+            <p class="fs-5 text-light fst-italic mb-0">
+              "{{post?.excerpt}}"
+            </p>
+          </div>
+
+          <div class="article-content">
+            <p>
+              {{post?.content}}
+            </p>
+
+            <h2 id="section-0">
+              <span class="icon-box">
+                <i class="fa-solid fa-camera"></i>
+              </span>
+              التواصل مع الموضوع
+            </h2>
+
+            <p>
+              قبل أن تمسك الكاميرا، تحدث مع الشخص...
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 order-1 order-lg-2">
+          <div class="position-sticky" style="top: 6rem;">
+            <!-- sidebar here -->
+            <div class="sidebar-card">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="icon-box">
+                  <i class="fa-solid fa-list"></i>
+                </div>
+                <h5 class="mb-0 text-white fw-bold">محتويات المقال</h5>
+              </div>
+
+              <nav class="toc">
+                <a href="#section-0">التواصل مع الموضوع</a>
+                <a href="#section-1">اختيار العدسة المناسبة</a>
+                <a href="#section-2">الإضاءة الطبيعية</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
-
-<section class="blog-body">
-  <aside class="toc">
-    <h4>محتويات المقال</h4>
-    <ul>
-        @for (tag of post?.tags; track $index) {
-            <li>{{ tag }}</li>
-        }
-    </ul>
-  </aside>
-
-  <article class="content">
-    <p class="excerpt">{{ post?.excerpt }}</p>
-
-    <div class="markdown">
-      <pre>{{ post?.content }}</pre>
-    </div>
-  </article>
-</section>
+  </section>
+</article>

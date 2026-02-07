@@ -1,12 +1,37 @@
-.nav-logo {
-    width: 4.2rem !important;
-    height: 4.2rem !important;
+nav {
+    min-height: var(--navbar-height);
+    border-bottom: 1px solid var(--color-border-light) !important;
 }
 
-.rounded-border {
-    border: solid 1px var(--color-border-light);
-    padding: 0.95rem 0.125rem !important;
-    /* border-radius: 2px; */
+nav.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    transition: all 0.35s ease;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+nav.navbar-fixed.scrolled {
+  background-color: rgba(15, 15, 20, 0.8) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-logo {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    width: calc(0.25rem * 12) !important;
+    height: calc(0.25rem * 12) !important;
+    transition: all 0.2s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.02);
 }
 
 .active-link {
@@ -15,7 +40,7 @@
     color: white !important;
     padding: 0.70rem 1.5rem !important;
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
@@ -44,4 +69,3 @@
 .search-icon:hover i {
     color: var(--color-primary) !important;
 }
-
