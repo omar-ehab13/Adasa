@@ -1,2 +1,374 @@
-<h1>مرحبا بك في المدونة</h1>
-<p>هلا بك والله</p>
+<section class="hero-section position-relative d-flex align-items-center overflow-hidden">
+    
+    <div class="grid-bg position-absolute top-0 start-0 w-100 h-100"></div>
+
+    <div class="hero-content position-relative w-100 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-8">
+                    <div class="text-center">
+                        <app-section-label
+                            [labelTitle]="'مرحباً بك في عدسة'"></app-section-label>
+
+                        <h1 class="hero-heading fw-bold text-white mb-4 lh-sm">
+                            اكتشف <span class="gradient-text">فن</span><br>
+                            التصوير الفوتوغرافي
+                        </h1>
+
+                        <p class="hero-description fs-4 mb-4 mx-auto">
+                            انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك
+                            في التصوير.
+                        </p>
+
+                        <div
+                            class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+                            <a routerLink="blog"
+                                class="btn btn-primary-hero rounded-5 d-inline-flex align-items-center justify-content-center gap-2 fw-semibold text-decoration-none border-0">
+                                <span>استكشف المقالات</span>
+                                <svg class="arrow-icon" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                            <a routerLink="about"
+                                class="btn btn-secondary-hero rounded-5 d-inline-flex align-items-center justify-content-center gap-2 fw-semibold text-decoration-none">
+                                <svg class="info-icon" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>اعرف المزيد</span>
+                            </a>
+                        </div>
+
+                        <div
+                            class="row g-3 justify-content-center mx-auto stats-container">
+                            <div class="col-6 col-md-3">
+                                <div class="stat-card rounded-5 p-3">
+                                    <i
+                                        class="fa-solid fa-newspaper stat-icon fs-4 mb-1"></i>
+                                    <p class="stat-number fw-bold mb-0">+50</p>
+                                    <p class="stat-label small mb-0">مقالة</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-card rounded-5 p-3">
+                                    <i
+                                        class="fa-solid fa-users stat-icon fs-4 mb-1"></i>
+                                    <p
+                                        class="stat-number fw-bold mb-0">+10ألف</p>
+                                    <p class="stat-label small mb-0">قارئ</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-card rounded-5 p-3">
+                                    <i
+                                        class="fa-solid fa-folder-open stat-icon fs-4 mb-1"></i>
+                                    <p class="stat-number fw-bold mb-0">4</p>
+                                    <p class="stat-label small mb-0">تصنيفات</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-card rounded-5 p-3">
+                                    <i
+                                        class="fa-solid fa-pen-nib stat-icon fs-4 mb-1"></i>
+                                    <p class="stat-number fw-bold mb-0">6</p>
+                                    <p class="stat-label small mb-0">كاتب</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section class="featured-section position-relative overflow-hidden py-5">
+    <div class="gradient-overlay position-absolute top-0 end-0"></div>
+
+    <div class="container position-relative">
+        <div class="row justify-content-between align-items-end mb-5 g-4">
+            <div class="col-12 col-md-8">
+                <app-section-label
+                    [labelTitle]="'مميز'"></app-section-label>
+
+                <h2 class="text-title fw-bold text-white mb-3">مقالات
+                    مختارة</h2>
+                <p class="text-sub mb-0">محتوى منتقى لبدء رحلة تعلمك</p>
+            </div>
+
+            <div class="col-12 col-md-4 text-md-start">
+                <div
+                    class="btn-view-all d-inline-flex align-items-center gap-1 px-4 py-2 rounded-3 fw-medium text-white"
+                    routerLink="/blog">
+                    <span>عرض الكل</span>
+                    <svg class="arrow-view-all" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            @for (post of posts; track $index) {
+            <div class="col-12">
+                <app-card [post]="post" [viewMode]="'list'"></app-card>
+            </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+<section
+    class="categories-section py-5 position-relative border-top border-bottom">
+    <div class="container">
+        <div class="text-center mb-5">
+            <app-section-label [labelTitle]="'التصنيفات'"></app-section-label>
+            <h2 class="fs-1 fw-bold text-white mb-3">استكشف حسب الموضوع</h2>
+            <p class="text-secondary mb-0 mx-auto"
+                style="max-width: 32rem;">اعثر على محتوى مصمم حسب اهتماماتك</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
+                <div
+                    class="category-card d-block p-4 rounded-4 position-relative overflow-hidden">
+                    <div
+                        class="category-gradient position-absolute top-0 start-0 w-100 h-100 opacity-0"></div>
+                    <div class="position-relative" style="z-index: 10;">
+                        <div
+                            class="category-icon-wrapper d-flex align-items-center justify-content-center mb-3 rounded-3">
+                            <i class="fa-solid fa-sun fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold fs-6 text-white mb-1">إضاءة</h3>
+                        <p class="small text-secondary mb-0">3 مقالة</p>
+                        <div
+                            class="category-arrow position-absolute top-0 start-0 rounded-circle d-flex align-items-center justify-content-center opacity-0">
+                            <svg class="arrow-icon-small" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div
+                    class="category-card d-block p-4 rounded-4 position-relative overflow-hidden">
+                    <div
+                        class="category-gradient position-absolute top-0 start-0 w-100 h-100 opacity-0"></div>
+                    <div class="position-relative" style="z-index: 10;">
+                        <div
+                            class="category-icon-wrapper d-flex align-items-center justify-content-center mb-3 rounded-3">
+                            <i class="fa-solid fa-user fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold fs-6 text-white mb-1">بورتريه</h3>
+                        <p class="small text-secondary mb-0">3 مقالة</p>
+                        <div
+                            class="category-arrow position-absolute top-0 start-0 rounded-circle d-flex align-items-center justify-content-center opacity-0">
+                            <svg class="arrow-icon-small" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div
+                    class="category-card d-block p-4 rounded-4 position-relative overflow-hidden">
+                    <div
+                        class="category-gradient position-absolute top-0 start-0 w-100 h-100 opacity-0"></div>
+                    <div class="position-relative" style="z-index: 10;">
+                        <div
+                            class="category-icon-wrapper d-flex align-items-center justify-content-center mb-3 rounded-3">
+                            <i class="fa-solid fa-mountain-sun fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold fs-6 text-white mb-1">مناظر
+                            طبيعية</h3>
+                        <p class="small text-secondary mb-0">2 مقالة</p>
+                        <div
+                            class="category-arrow position-absolute top-0 start-0 rounded-circle d-flex align-items-center justify-content-center opacity-0">
+                            <svg class="arrow-icon-small" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div
+                    class="category-card d-block p-4 rounded-4 position-relative overflow-hidden">
+                    <div
+                        class="category-gradient position-absolute top-0 start-0 w-100 h-100 opacity-0"></div>
+                    <div class="position-relative" style="z-index: 10;">
+                        <div
+                            class="category-icon-wrapper d-flex align-items-center justify-content-center mb-3 rounded-3">
+                            <i class="fa-solid fa-sliders fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold fs-6 text-white mb-1">تقنيات</h3>
+                        <p class="small text-secondary mb-0">5 مقالة</p>
+                        <div
+                            class="category-arrow position-absolute top-0 start-0 rounded-circle d-flex align-items-center justify-content-center opacity-0">
+                            <svg class="arrow-icon-small" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div
+                    class="category-card d-block p-4 rounded-4 position-relative overflow-hidden">
+                    <div
+                        class="category-gradient position-absolute top-0 start-0 w-100 h-100 opacity-0"></div>
+                    <div class="position-relative" style="z-index: 10;">
+                        <div
+                            class="category-icon-wrapper d-flex align-items-center justify-content-center mb-3 rounded-3">
+                            <i class="fa-solid fa-camera fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold fs-6 text-white mb-1">معدات</h3>
+                        <p class="small text-secondary mb-0">3 مقالة</p>
+                        <div
+                            class="category-arrow position-absolute top-0 start-0 rounded-circle d-flex align-items-center justify-content-center opacity-0">
+                            <svg class="arrow-icon-small" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-articles-section py-5 position-relative overflow-hidden">
+    <div
+        class="gradient-overlay-left position-absolute bottom-0 start-0 h-100"></div>
+
+    <div class="container position-relative">
+        <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-5 gap-4">
+            <div>
+                <app-section-label [labelTitle]="'الأحدث'"></app-section-label>
+                <h2 class="fs-1 fw-bold text-white mb-3">أحدث المقالات</h2>
+                <p class="text-secondary mb-0" style="max-width: 32rem;">محتوى
+                    جديد طازج من المطبعة</p>
+            </div>
+            <div
+                class="latest-view-all d-inline-flex align-items-center gap-2 fw-semibold"
+                routerLink="/blog">
+                عرض جميع المقالات
+                <svg class="latest-arrow" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                    </path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            @for (post of posts; track $index) {
+            <div class="col-md-6 col-lg-4">
+                <app-card [post]="post" [viewMode]="'grid'"></app-card>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="newsletter-section py-5 position-relative overflow-hidden">
+    <div
+        class="newsletter-blur position-absolute top-0 start-50 translate-middle-x"></div>
+
+    <div class="container position-relative" style="max-width: 56rem;">
+        <div class="newsletter-card rounded-4 p-4 p-md-5 text-center">
+            <div
+                class="newsletter-icon-wrapper d-flex align-items-center justify-content-center mx-auto mb-4">
+                <svg class="newsletter-icon" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                    </path>
+                </svg>
+            </div>
+
+            <h2 class="fs-1 fw-bold text-white mb-3">
+                اشترك في <span class="gradient-text">نشرتنا الإخبارية</span>
+            </h2>
+
+            <p class="text-secondary fs-5 mb-4 mx-auto"
+                style="max-width: 36rem;">
+                احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك
+                الإلكتروني
+            </p>
+
+            <form class="d-flex flex-column flex-sm-row gap-3 mx-auto mb-4"
+                style="max-width: 32rem;">
+                <input type="email"
+                    class="newsletter-input flex-grow-1 px-4 py-3 rounded-3"
+                    placeholder="أدخل بريدك الإلكتروني">
+                <button type="submit"
+                    class="newsletter-btn px-5 py-3 rounded-3 fw-semibold text-white border-0">
+                    اشترك الآن
+                </button>
+            </form>
+
+            <div
+                class="d-flex flex-wrap align-items-center justify-content-center gap-3 small text-secondary">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex newsletter-avatars">
+                        <img
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+                            alt class="newsletter-avatar rounded-circle">
+                        <img
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+                            alt class="newsletter-avatar rounded-circle">
+                        <img
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                            alt class="newsletter-avatar rounded-circle">
+                    </div>
+                    <span>انضم لـ <span
+                            class="text-white fw-medium">+10,000</span>
+                        مصور</span>
+                </div>
+                <span class="d-none d-sm-inline newsletter-separator">•</span>
+                <span>بدون إزعاج</span>
+                <span class="d-none d-sm-inline newsletter-separator">•</span>
+                <span>إلغاء الاشتراك في أي وقت</span>
+            </div>
+        </div>
+    </div>
+</section>

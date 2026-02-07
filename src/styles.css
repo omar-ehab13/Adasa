@@ -99,6 +99,13 @@ body {
     background-color: var(--color-primary) !important;
 }
 
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(38, 38, 38, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 38, 38, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
 
 /* Button Classes */
 .btn-hover:hover {
@@ -115,4 +122,3 @@ body {
 .border-color-border {
   border-color: var(--color-border) !important;
 }
-
