@@ -61,20 +61,22 @@
           </div>
 
           <div class="article-content">
-            <p>
-              {{post?.content}}
+            <p class="intro-section">
+              {{introText}}
             </p>
 
-            <h2 id="section-0">
+            @for (section of sections; track section.id) {
+            <h2 [id]="section.id">
               <span class="icon-box">
                 <i class="fa-solid fa-camera"></i>
               </span>
-              التواصل مع الموضوع
+              {{section.title}}
             </h2>
 
             <p>
-              قبل أن تمسك الكاميرا، تحدث مع الشخص...
+              {{section.content}}
             </p>
+            }
           </div>
         </div>
 
@@ -91,9 +93,11 @@
               </div>
 
               <nav class="toc">
-                <a href="#section-0">التواصل مع الموضوع</a>
-                <a href="#section-1">اختيار العدسة المناسبة</a>
-                <a href="#section-2">الإضاءة الطبيعية</a>
+                @for (section of sections; track section.id) {
+                <a [routerLink]="[]" [fragment]="section.id">
+                  {{ section.title }}
+                </a>
+                }
               </nav>
             </div>
           </div>

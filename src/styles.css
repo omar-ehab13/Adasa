@@ -68,7 +68,7 @@
     --color-dark-card: #161616;
     --color-border: #262626;
     --color-border-light: #333;
-    --color-neutral: oklch(70.8% 0 0);
+    --color-neutral: rgb(161, 161, 161);
 
     --navbar-height: 6vh;
 }

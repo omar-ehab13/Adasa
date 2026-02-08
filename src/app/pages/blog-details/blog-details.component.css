@@ -147,3 +147,10 @@
   background: rgba(255, 140, 0, 0.08);
   color: #ff8c00;
 }
+
+.intro-text {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 3rem;
+}
