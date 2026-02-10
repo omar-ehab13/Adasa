@@ -66,7 +66,7 @@
             </p>
 
             @for (section of sections; track section.id) {
-            <h2 [id]="section.id">
+            <h2 [id]="section.id" class="article-section">
               <span class="icon-box">
                 <i class="fa-solid fa-camera"></i>
               </span>
@@ -94,7 +94,10 @@
 
               <nav class="toc">
                 @for (section of sections; track section.id) {
-                <a [routerLink]="[]" [fragment]="section.id">
+                <a
+                  [routerLink]="['.']"
+                  [fragment]="section.id"
+                  [queryParamsHandling]="'preserve'">
                   {{ section.title }}
                 </a>
                 }

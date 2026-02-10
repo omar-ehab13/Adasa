@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { IPost } from '../../interfaces/post.interface';
 import { PostService } from '../../services/post.service';
 import { CardComponent } from "../../components/card/card.component";
@@ -10,17 +10,19 @@ import { CardComponent } from "../../components/card/card.component";
   styleUrl: './blog.component.css',
 })
 export class BlogComponent implements OnInit {
-  posts : IPost[] = [];
-  filteredPosts : IPost[] = [];
-  viewMode : 'grid' | 'list' = 'grid';
+  posts: IPost[] = [];
+  filteredPosts: IPost[] = [];
+  viewMode: 'grid' | 'list' = 'grid';
 
-  searchTerm : string = '';
-  selectedCategory : string = 'all';
-  categories : string[] = ['all', 'إضاءة', 'بورتريه', 'مناظر طبيعية', 'تقنيات', 'معدات'];
+  searchTerm: string = '';
+  selectedCategory: string = 'all';
+  categories: string[] = ['all', 'إضاءة', 'بورتريه', 'مناظر طبيعية', 'تقنيات', 'معدات'];
+
+  isScrolled: boolean = false;
 
   @ViewChild('searchInput') searchInput !: ElementRef<HTMLInputElement>
 
-  constructor(private postService : PostService) {
+  constructor(private postService: PostService) {
 
   }
 
@@ -35,7 +37,7 @@ export class BlogComponent implements OnInit {
     this.filteredPosts = this.posts.filter(post => {
 
       // check if the current post matches according to the search term
-      const matchesSearch = 
+      const matchesSearch =
         post.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(this.searchTerm.toLowerCase());
 
@@ -44,5 +46,14 @@ export class BlogComponent implements OnInit {
 
       return matchesSearch && matchesCategory;
     });
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    this.isScrolled = window.scrollY > 80;
+  }
+
+  ngAfterViewInit() {
+    this.isScrolled = window.scrollY > 80;
   }
 }

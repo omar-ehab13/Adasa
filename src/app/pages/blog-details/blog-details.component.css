@@ -154,3 +154,7 @@
   line-height: 1.9;
   margin-bottom: 3rem;
 }
+
+.article-section {
+  scroll-margin-top: calc(var(--navbar-height) + 16px);
+}

@@ -32,6 +32,18 @@ export class BlogDetailsComponent implements OnInit {
         [this.post.id]
       );
     }
+
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => {
+          const el = document.getElementById(fragment);
+          el?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+      }
+    });
   }
 
 
